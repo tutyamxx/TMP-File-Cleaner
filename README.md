@@ -10,6 +10,8 @@ For Windows OS only!
 ## ATTENTION !
 - No it's not a virus, but if your Anti Virus somehow detects this program as a potential threat, you have to understand that this program is deleting files from Windows Temp folder, so you might want to add it to whitelist... Duh. :3
 
+- NOT all of the files will be deleted! Some of them might be used in the current process or simply can't be deleted. It happens do not worry.
+
 ## What does this program do really?
 - Clears all the junk/temporary files/temporary folders
 - Shows how much space you freed.
