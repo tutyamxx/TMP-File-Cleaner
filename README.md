@@ -5,6 +5,8 @@ For Windows OS only!
 
 - The Temp folder location is in --> **C:\Users\username\AppData\Local\Temp** that can be accessed by advanced users typing "**%temp%**" or "**%appdata%**" into Windows Search Bar.
 
+- What people usualy do, is to manually go to this specific folder and manually delete all the junk files. Well this program was created to ease that work with a few simple clicks.
+
 ## ATTENTION !
 - No it's not a virus, but if your Anti Virus somehow detects this program as a potential threat, you have to understand that this program is deleting files from Windows Temp folder, so you might want to add it to whitelist... Duh. :3
 
