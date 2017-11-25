@@ -12,6 +12,7 @@ For Windows OS only!
 - Clears all the junk/temporary files/temporary folders
 - Shows how much space you freed.
 - Easy to use
+- Is not going to harm your computer by any means.
 
 
 ## Pictures of the UI
