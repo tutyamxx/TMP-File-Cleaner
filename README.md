@@ -5,6 +5,8 @@ For Windows OS only!
 
 - The Temp folder location is in --> **C:\Users\username\AppData\Local\Temp** that can be accessed by advanced users typing "**%temp%**" or "**%appdata%**" into Windows Search Bar.
 
+- AFAIK the know programs for cleaning such as CCLeaner, ATF Cleaner, BitBleach etc does not have the option to clean the Temp folder for some reason. With this program you can, it is actually very handy hence I use it on daily basis!
+
 - What people usualy do, is to manually go to this specific folder and manually delete all the junk files. Well this program was created to ease that work with a few simple clicks.
 
 - I would recommend running it as **Administrator**
