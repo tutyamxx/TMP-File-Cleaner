@@ -118,7 +118,7 @@ namespace TMP_File_Cleaner
             MaximizeBox = false;
 
             AutoUpdater.ShowSkipButton = false;
-            AutoUpdater.Start("http://rbsoft.org/updates/AutoUpdaterTest.xml");
+            AutoUpdater.Start("https://github.com/tutyamxx/TMP-File-Cleaner/blob/master/AutoUpdate.xml");
         }
     }
 }
