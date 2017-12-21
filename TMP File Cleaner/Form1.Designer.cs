@@ -126,7 +126,7 @@
             this.MaximumSize = new System.Drawing.Size(366, 432);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TMP File Cleaner v1.0";
+            this.Text = "TMP File Cleaner";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -115,10 +115,10 @@ namespace TMP_File_Cleaner
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MaximizeBox = false;
+            AutoUpdater.Start("https://relentless-offer.000webhostapp.com/AutoUpdate.xml");
 
+            MaximizeBox = false;
             AutoUpdater.ShowSkipButton = false;
-            AutoUpdater.Start("https://github.com/tutyamxx/TMP-File-Cleaner/blob/master/AutoUpdate.xml");
         }
     }
 }
