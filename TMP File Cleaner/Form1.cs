@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AutoUpdaterDotNET;
+
 namespace TMP_File_Cleaner
 {
     public partial class Form1 : Form
@@ -20,12 +22,6 @@ namespace TMP_File_Cleaner
         {
             InitializeComponent();
         }
-
-        /*public static long GetDirectorySize(string parentDirectory)
-        {
-            return new DirectoryInfo(parentDirectory).GetFiles("*.*", SearchOption.AllDirectories).Sum(file => file.Length);
-        }
-        */
 
         static long DirectorySize(DirectoryInfo dInfo, bool includeSubDir)
         {
@@ -120,6 +116,9 @@ namespace TMP_File_Cleaner
         private void Form1_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
+
+            AutoUpdater.ShowSkipButton = false;
+            AutoUpdater.Start("http://rbsoft.org/updates/AutoUpdaterTest.xml");
         }
     }
 }
