@@ -25,7 +25,7 @@ For Windows OS only!
 
 ## Pictures of the UI
 
-![Screenshot](tmpui.PNG)
+![Screenshot](tmpui.png)
 
 
 
