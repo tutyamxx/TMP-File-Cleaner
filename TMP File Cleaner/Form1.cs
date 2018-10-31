@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-
-using AutoUpdaterDotNET;
 
 namespace TMP_File_Cleaner
 {
@@ -59,6 +59,7 @@ namespace TMP_File_Cleaner
                 // --| Many users do not know that it contains temporary files that are stored in this folder in time, and can really fill your HDD space!
                 // --| This folder can be accessed by typing "%temp%" or "%appdata%" into the search bar. Because is so tricky many users don't know about it!
                 string szTemporaryFilesPath = Path.GetTempPath();
+
                 var Dir = new DirectoryInfo(szTemporaryFilesPath);
 
                 if (!Dir.Exists)
@@ -96,8 +97,11 @@ namespace TMP_File_Cleaner
                        
                 }
 
-                MessageBox.Show("Temporary files have been deleted!\nThis time you cleaned " + BytesToString(TempFilesSize) + "!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Temporary files have been deleted!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 TempFilesSize = 0;
+                lbl_JunkSize.Text = "Temporary Junk: " + TempFilesSize + " KB";
+
             }
 
             else if (dialogResult == DialogResult.No)
@@ -108,10 +112,67 @@ namespace TMP_File_Cleaner
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AutoUpdater.Start("https://relentless-offer.000webhostapp.com/AutoUpdate.xml");
+            TempFilesSize = 0;
 
-            MaximizeBox = false;
-            AutoUpdater.ShowSkipButton = false;
+            btn_CleanTmp.TabStop = false;
+            btn_CleanTmp.FlatStyle = FlatStyle.Flat;
+            btn_CleanTmp.FlatAppearance.BorderSize = 0;
+            btn_CleanTmp.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+            btn_CleanTmp.BackColor = Color.Fuchsia;
+
+            string szTemporaryFilesPath = Path.GetTempPath();
+
+            var Dir = new DirectoryInfo(szTemporaryFilesPath);
+
+            if (!Dir.Exists)
+            {
+                MessageBox.Show("Welp... 'Temp' folder is missing somehow!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
+            foreach (DirectoryInfo dir in Dir.GetDirectories())
+            {
+                try
+                {
+                    TempFilesSize += DirectorySize(dir, true);
+                }
+
+                catch (Exception)
+                {
+                    // Ignore folders that are locked or being used.
+                }
+            }
+
+            foreach (FileInfo szFile in Dir.GetFiles())
+            {
+                try
+                {
+                    TempFilesSize += szFile.Length;
+                }
+
+                catch (Exception)
+                {
+                    // Ignore files that are locked or being used.
+                }
+            }
+
+            lbl_JunkSize.Text = "Temporary Junk: " + BytesToString(TempFilesSize);
+
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btn_CleanTmp_MouseHover(object sender, EventArgs e)
+        {
+            btn_CleanTmp.BackColor = Color.Fuchsia;
+        }
+
+        private void btn_GoTo_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/tutyamxx/TMP-File-Cleaner");
         }
     }
 }
