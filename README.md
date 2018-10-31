@@ -25,11 +25,8 @@ For Windows OS only!
 
 ## Pictures of the UI
 
-![Screenshot](pic1.PNG)
+![Screenshot](tmpui.PNG)
 
-![Screenshot](pic2.PNG)
-
-![Screenshot](pic3.PNG)
 
 
 
